@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转转 - 买方界面</title>
+    <link rel="stylesheet" type="text/css" href="buyer.css">
+</head>
+<body>
+<header class="header">
+    <h1>🛒 转转 - 买方界面</h1>
+    <div class="nav-buttons">
+        <button class="nav-btn" id="switchToSellerBtn">
+            <span>📦</span> 切换到卖方
+        </button>
+        <button class="nav-btn logout-btn" id="logoutBtn">
+            <span>🚪</span> 登出
+        </button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="welcome-section">
+        <h2>欢迎回来, <span id="buyerNameDisplay">买家</span>!</h2>
+        <p>发现更多优质二手好物，开启您的购物之旅</p>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="搜索商品名称...">
+        <button class="search-btn" id="searchBtn">搜索</button>
+    </div>
+
+    <h2 class="section-title">🔍 热门商品</h2>
+    <div class="item-grid" id="itemList">
+        <!-- 商品列表将通过 JavaScript 动态生成 -->
+    </div>
+
+    <h2 class="section-title">📦 我的已购买商品</h2>
+    <div class="item-grid" id="purchasedItemsList">
+        <!-- 已购买商品列表将通过 JavaScript 动态生成 -->
+    </div>
+
+    <div class="transaction-status" id="transactionStatus" style="display: none;">
+        <h4>交易状态</h4>
+        <p id="transactionMessage">等待卖家发货...</p>
+    </div>
+
+    <div class="profile-section">
+        <div class="profile-header">
+            <div class="profile-avatar" id="buyerAvatar">B</div>
+            <div class="profile-info">
+                <h3 id="buyerProfileName">买家</h3>
+                <p>活跃买方，享受购物乐趣</p>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stat-card">
+                <h4 id="totalItems">0</h4>
+                <p>浏览商品</p>
+            </div>
+            <div class="stat-card">
+                <h4 id="purchasedItems">0</h4>
+                <p>已购买</p>
+            </div>
+            <div class="stat-card">
+                <h4 id="favorites">0</h4>
+                <p>收藏商品</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="notification" id="notification">
+    操作成功！
+</div>
+
+<script src="buyer.js"></script>
+</body>
+</html>

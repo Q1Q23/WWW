@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转转 - 登录</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+<div class="login-container">
+    <div class="logo">
+        <h1>转转</h1>
+        <p>让闲置物品重新流动</p>
+    </div>
+
+    <form class="login-form" id="loginForm">
+        <div class="input-group">
+            <label for="username">用户名</label>
+            <input type="text" id="username" placeholder="请输入用户名" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">密码</label>
+            <input type="password" id="password" placeholder="请输入密码" required>
+        </div>
+
+        <div class="input-group">
+            <label>用户类型</label>
+            <div class="user-type-grid">
+                <div class="user-type-option" data-type="buyer">
+                    <i>🛒</i>
+                    <span>买方</span>
+                </div>
+                <div class="user-type-option" data-type="seller">
+                    <i>📦</i>
+                    <span>卖方</span>
+                </div>
+            </div>
+            <input type="hidden" id="userType" required>
+        </div>
+
+        <button type="submit" class="login-btn">立即登录</button>
+    </form>
+
+    <div class="switch-link">
+        <p>还没有账号？ <a href="register.html">立即注册</a></p>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

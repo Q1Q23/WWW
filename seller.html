@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转转 - 卖方界面</title>
+    <link rel="stylesheet" type="text/css" href="seller.css">
+</head>
+<body>
+<header class="header">
+    <h1>📦 转转 - 卖方界面</h1>
+    <div class="nav-buttons">
+        <button class="nav-btn" id="switchToBuyerBtn">
+            <span>🛒</span> 切换到买方
+        </button>
+        <button class="nav-btn logout-btn" id="logoutBtn">
+            <span>🚪</span> 登出
+        </button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="welcome-section">
+        <h2>欢迎回来, <span id="sellerNameDisplay">卖家</span>!</h2>
+        <p>在这里可以发布和管理您的商品，开启赚钱之旅</p>
+    </div>
+
+    <div class="publish-section">
+        <h3>📦 发布新商品</h3>
+        <form class="publish-form" id="sellForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="itemName">商品名称</label>
+                    <input type="text" id="itemName" placeholder="请输入商品名称" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemCategory">商品分类</label>
+                    <select id="itemCategory" required>
+                        <option value="">请选择分类</option>
+                        <option value="electronics">电子产品</option>
+                        <option value="clothing">服装鞋包</option>
+                        <option value="books">图书文具</option>
+                        <option value="furniture">家具用品</option>
+                        <option value="sports">运动户外</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="itemDescription">商品描述</label>
+                <textarea id="itemDescription" rows="4" placeholder="详细描述商品状况、使用情况、新旧程度等" required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="itemPrice">价格 (元)</label>
+                    <input type="number" id="itemPrice" placeholder="请输入价格" required min="0" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemCondition">商品成色</label>
+                    <select id="itemCondition" required>
+                        <option value="">请选择成色</option>
+                        <option value="10">10成新 (全新)</option>
+                        <option value="9">9成新</option>
+                        <option value="8">8成新</option>
+                        <option value="7">7成新</option>
+                        <option value="6">6成新</option>
+                        <option value="5">5成新</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="itemImage">商品图片链接</label>
+                <input type="url" id="itemImage" placeholder="https://example.com/image.jpg">
+            </div>
+
+            <button type="submit" class="publish-btn">
+                <span>📤</span> 发布商品
+            </button>
+        </form>
+    </div>
+
+    <h2 class="section-title">📋 我的商品</h2>
+    <div class="item-grid" id="myItemsList">
+        <!-- 我的商品列表将通过 JavaScript 动态生成 -->
+    </div>
+
+    <h2 class="section-title">🔔 通知中心</h2>
+    <div class="notification-container" id="notificationContainer">
+        <div class="notification-item hint">
+            <h4>提示</h4>
+            <p>这里显示您商品的购买和发货通知</p>
+            <div class="time">系统提示</div>
+        </div>
+    </div>
+
+    <div class="profile-section">
+        <div class="profile-header">
+            <div class="profile-avatar" id="sellerAvatar">S</div>
+            <div class="profile-info">
+                <h3 id="sellerProfileName">卖家</h3>
+                <p>诚信卖家，提供优质商品</p>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stat-card">
+                <h4 id="totalItemsSold">0</h4>
+                <p>已售商品</p>
+            </div>
+            <div class="stat-card">
+                <h4 id="totalItemsForSale">0</h4>
+                <p>在售商品</p>
+            </div>
+            <div class="stat-card">
+                <h4 id="revenue">¥0</h4>
+                <p>总收入</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="notification" id="notification">
+    操作成功！
+</div>
+<script src="seller.js"></script>
+</body>
+</html>
